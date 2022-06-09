@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-clr: #f9f9f9;
+  --fg-clr: #000;
+  --primary-clr: #3da0a0;
+  --font-family: "Poppins", sans-serif;
+}
+
+body.dark {
+  --bg-clr: #191919;
+  --fg-clr: #fff;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--font-family);
+  font-weight: regular;
+}
+
+header {
+  background: var(--bg-clr);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 250ms ease-in-out;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header .logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--fg-clr);
+}
+
+header .list {
+  display: flex;
+  list-style: none;
+}
+
+header .list-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+header .list-link {
+  color: var(--fg-clr);
+}
+
+header .list-link.active {
+  color: var(--primary-clr);
+  font-weight: 600;
+}
+
+.hero-section {
+  position: relative;
+}
+
+.img-container {
+  width: 75%;
+  height: 80vh;
+  background: url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80")
+    center no-repeat;
+  background-size: cover;
+}
+
+.text-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 80vh;
+  background: var(--bg-clr);
+  color: var(--fg-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 500px 0 0 500px;
+  padding: 0 40px 0 200px;
+  transition: 250ms ease-in-out;
+}
+
+.text-container .text > * {
+  margin-bottom: 50px;
+}
+
+.text-container .heading {
+  font-size: 4rem;
+  transition: 250ms ease-in-out;
+}
+
+.text-container .description p {
+  line-height: 28px;
+  margin-bottom: 1em;
+  font-size: 14px;
+  transition: 250ms ease-in-out;
+}
+
+.text-container .btn {
+  padding: 0.75em 1em;
+  border: 1px solid var(--primary-clr);
+  overflow: hidden;
+  text-decoration: none;
+  /* border-radius: 50px; */
+  position: relative;
+  z-index: 1;
+}
+
+.text-container .btn span {
+  z-index: 2;
+  color: var(--primary-clr);
+  transition: 250ms ease-in-out;
+}
+
+.text-container .btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--primary-clr);
+  /* border-radius: 50px; */
+  z-index: -1;
+  transform: scaleX(0);
+  transition: 250ms ease-out;
+  transform-origin: left;
+}
+
+.text-container .btn:hover span {
+  color: var(--bg-clr);
+  padding: 0 0.5em;
+}
+
+.text-container .btn:hover::before {
+  transform: scaleX(1);
+}
