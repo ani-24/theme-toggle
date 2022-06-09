@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 14px;
+}
+
 :root {
   --bg-clr: #f9f9f9;
   --fg-clr: #000;
